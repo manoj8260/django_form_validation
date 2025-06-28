@@ -20,7 +20,11 @@ from validate_app.views import  *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # modelform url
     path('',StudentList.as_view(),name = 'home') , 
+
+    # djangoform url 
+    path('employee',EmployeeFormView.as_view())
 
     
 ]

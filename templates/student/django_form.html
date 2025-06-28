@@ -6,17 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post" >
+    <form action="" method="post">
         {%csrf_token%}
-        {{sfdo.as_div}}
-         <style>
-            .form-control{
-                font-size: 100px;
-                color: red;
-            }
-         </style>
+        <!-- {{form.as_div}} -->
+         {%for field in form%}
+          <div>
+            {{field.label_tag}} {{field}}
+          </div>
+         {%endfor%}
         <input type="submit" value="register">
     </form>
-
 </body>
 </html>
